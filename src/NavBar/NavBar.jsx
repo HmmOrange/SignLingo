@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import logo from './assets/logo.svg';
-import './index.css'; 
+import logo from '../assets/logo.svg';
+import '../index.css'; 
+import './NavBar.css';
 
 function NavBar() {
   return (
@@ -10,9 +11,9 @@ function NavBar() {
           <img src={logo} alt="Logo" style={{ height: '40px' }} />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Link to="/"><div className="btn">Home</div></Link>
-          <Link to="/login"><div className="btn">Login</div></Link>
-          <Link to="/dictionary"><div className="btn">Dictionary</div></Link>
+          <Link to="/"><div className="nav-btn">Home</div></Link>
+          <Link to="/login"><div className="nav-btn">Login</div></Link>
+          <Link to="/dictionary"><div className="nav-btn  ">Dictionary</div></Link>
         </div>
       </div>
     </div>

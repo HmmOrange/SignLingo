@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.login-wrapper {
+  padding-top: 60px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.login-left {
+  width: 50%;
+}
+
+.login-left img {
+  width: 70%;
+  height: auto;
+  max-height: 90%;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
+.login-right {
+  width: 50%;
+  padding: 10px 20px;
+}
+
+.login-right h2 {
+  margin-bottom: 10px;
+}
+
+.login-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  background-color: #92d6d7;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.login-tabs button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 5px 0;
+}
+
+.login-tabs .active {
+  background: #49bbbd;
+  color: white;
+}
+
+.login-tabs .inactive {
+  background: #92d6d7;
+  color: white;
+}
+
+.login-form label {
+  display: flex;
+  margin: 15px 0 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #49bbbd;
+  border-radius: 10px;
+  outline: none;
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  width: 100%;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0px 30px 0px;
+}
+
+.login-options input[type="checkbox"] {
+  margin-right: 8px; /* or however much space you like */
+}
+
+
+.login-options a {
+  text-decoration: none;
+  color: gray;
+}
+
+.login-confirm {
+  display: flex;
+  justify-content: flex-end;
+}
