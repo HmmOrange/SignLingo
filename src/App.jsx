@@ -1,29 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import NavBar from './NavBar';
 import signLogo from './assets/logo.svg'
 import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="nav">
-        <div className="container">
-          <Link to="/">
-            <img src={signLogo} alt="Logo" style={{ height: '40px' }} />
-          </Link>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Link to="/">
-              <div className="btn">Home</div>
-            </Link>
-            <Link to="/login">
-              <div className="btn">Login</div>
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <NavBar />
 
       <div>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
