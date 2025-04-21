@@ -12,6 +12,7 @@ function NavBar() {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Link to="/"><div className="btn">Home</div></Link>
           <Link to="/login"><div className="btn">Login</div></Link>
+          <Link to="/dictionary"><div className="btn">Dictionary</div></Link>
         </div>
       </div>
     </div>
