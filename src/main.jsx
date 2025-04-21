@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
-        <Route path="Dictionary" element={<Dictionary />} />
+        <Route path="/dictionary" element={<Dictionary />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

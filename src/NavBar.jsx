@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from './assets/logo.svg';
-import './index.css';  // Your existing CSS for nav
+import './index.css'; 
 
 function NavBar() {
   return (
