@@ -1,8 +1,5 @@
 import NavBar from '../NavBar/NavBar';
 import React, { useState } from 'react';
-import { Card, CardContent } from "../components/ui/card";
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
 
 
 function Dictionary() {
@@ -14,7 +11,7 @@ function Dictionary() {
             <NavBar />
             <div className="flex bg-white text-black space-x-10">
                 {/* Sidebar - Các từ trending */}
-                <aside className="w-[250px] border rounded-lg p-4">
+                <aside className="w-[250px] border rounded-lg p-5">
                     <h2 className="text-xl font-bold mb-6">Các từ trending</h2>
                     <ul className="space-y-4">
                         {trendingWords.map((word, index) => {
@@ -39,7 +36,6 @@ function Dictionary() {
                     </ul>
                 </aside>
 
-                {/* Main content */}
                 <main className="flex-2">
                     {/* Category toggle buttons */}
                     <div className="flex space-x-2 mb-6">
@@ -66,7 +62,7 @@ function Dictionary() {
                     <div className="w-250 grid grid-cols-[2fr_1fr] gap-6">
                         <div className="border rounded p-4">
                             <h3 className="font-semibold mb-2">Video</h3>
-                            <div className="bg-gray-100 h-80 flex items-center justify-center text-gray-400">
+                            <div className="bg-gray-100 h-92 flex items-center justify-center text-gray-400">
                                 {selectedWord ? `Video của "${selectedWord}"` : 'Chọn một từ để xem video'}
                             </div>
                         </div>

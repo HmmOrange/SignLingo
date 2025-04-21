@@ -1,10 +1,20 @@
-import React from 'react';
-import './Login.css';
+import React, { useEffect } from 'react';
 import signImage from '../assets/login.png';
 import NavBar from '../NavBar/NavBar';
 import '../index.css'
-
 const LoginPage = () => {
+
+	useEffect(() => {
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = '/css/Login.css'; // Đảm bảo file này được phục vụ đúng từ public/css
+		document.head.appendChild(link);
+	
+		return () => {
+		  document.head.removeChild(link);
+		};
+	  }, []);
+
   return (
 		<>
 			<NavBar>
