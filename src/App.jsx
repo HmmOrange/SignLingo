@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,6 +9,17 @@ function App() {
 
   return (
     <>
+      <div class="nav">
+        <div class="container">
+          <Link to="/">
+							<div class="btn">Home</div>
+					</Link>
+          <Link to="/login">
+            <div class="btn">Login</div>
+          </Link>
+        </div>
+      </div>
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -21,9 +33,9 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <button onClick={() => window.open('./login', '_blank')}> 
-          Login
-        </button>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
