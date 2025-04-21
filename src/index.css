@@ -21,6 +21,11 @@ a:hover {
   color: #0c47b7;
 }
 
+a:visited { 
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -90,10 +95,9 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.5em 1em;
 }
 
 .btn {

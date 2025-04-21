@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import signLogo from './assets/logo.svg'
 import './App.css'
 
 function App() {
@@ -9,26 +8,29 @@ function App() {
 
   return (
     <>
-      <div class="nav">
-        <div class="container">
+      <div className="nav">
+        <div className="container">
           <Link to="/">
-							<div class="btn">Home</div>
-					</Link>
-          <Link to="/login">
-            <div class="btn">Login</div>
+            <img src={signLogo} alt="Logo" style={{ height: '40px' }} />
           </Link>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Link to="/">
+              <div className="btn">Home</div>
+            </Link>
+            <Link to="/login">
+              <div className="btn">Login</div>
+            </Link>
+          </div>
         </div>
       </div>
 
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+          <img src={signLogo} className="logo" alt="Sign logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>SignLingo</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
