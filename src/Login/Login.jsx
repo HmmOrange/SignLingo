@@ -2,8 +2,20 @@ import React, { useEffect } from 'react';
 import signImage from '../assets/login.png';
 import NavBar from '../NavBar/NavBar';
 import '../index.css'
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
+
+
 const LoginPage = () => {
 
+	const { login } = useAuth();
+	const navigate = useNavigate();
+
+  const handleLogin = () => {
+    login('abc'); // Simulate login with a temp username
+		navigate("/");
+  };
+	
 	useEffect(() => {
 		const link = document.createElement('link');
 		link.rel = 'stylesheet';
@@ -49,7 +61,7 @@ const LoginPage = () => {
 						</div>
 
 						<div className='login-confirm'>
-							<button>Đăng nhập</button>
+							<button onClick={handleLogin}>Đăng nhập</button>
 						</div>
 					</div>
 				</div>
