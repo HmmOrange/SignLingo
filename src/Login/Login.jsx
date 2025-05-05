@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import signImage from '../assets/login.png';
 import NavBar from '../NavBar/NavBar';
-import '../index.css'
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-
 
 const LoginPage = () => {
 

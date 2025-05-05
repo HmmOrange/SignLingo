@@ -8,18 +8,18 @@ function NavBar() {
   const { user } = useAuth();
 
   return (
-    <div className="nav">
-      <div className="container">
+    <div className="navzz">
+      <div className="containerzz">
         <Link to="/">
           <img src={signLogo} alt="Logo" style={{ height: '40px' }} />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Link to="/"><div className="nav-btn">Home</div></Link>
-          <Link to="/dictionary"><div className="nav-btn  ">Dictionary</div></Link>
+          <Link to="/"><div className="navzz-btn">Home</div></Link>
+          <Link to="/dictionary"><div className="navzz-btn  ">Dictionary</div></Link>
           {/* <Link to="/login"><div className="nav-btn">Login</div></Link> */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {user ? (
-              <div className="nav-profile" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div className="navzz-profile" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <img
                   src={user.avatar}
                   alt="Profile"
@@ -28,7 +28,7 @@ function NavBar() {
                 <span style={{width: '80px', alignItems: 'center', fontWeight: '500'}}>{user.name}</span>
               </div>
             ) : (
-              <Link to="/login"><div className="nav-btn">Login</div></Link>
+              <Link to="/login"><div className="navzz-btn">Login</div></Link>
             )}
           </div>
         </div>

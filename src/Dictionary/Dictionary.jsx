@@ -4,14 +4,16 @@ import React, { useState } from 'react';
 
 function Dictionary() {
     const [selectedWord, setSelectedWord] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     const trendingWords = ['Xin chào', 'Tạm biệt', 'Việt Nam', 'Giúp tôi', 'Cảm ơn'];
 
     return (
-        <div className="flex m-0 p-0 -ml-10">
-            <NavBar />
-            <div className="flex bg-white text-black space-x-10">
+        <>
+        <NavBar />
+        <div className="flex m-0 p-0 -ml-10">      
+            <div className="flex bg-white text-black w-full">
                 {/* Sidebar - Các từ trending */}
-                <aside className="w-[250px] border rounded-lg p-5">
+                <aside className="w-1/5 border rounded-lg p-4 py-10">
                     <h2 className="text-xl font-bold mb-6">Các từ trending</h2>
                     <ul className="space-y-4">
                         {trendingWords.map((word, index) => {
@@ -19,15 +21,15 @@ function Dictionary() {
                             return (
                                 <li
                                     key={index}
-                                    className={`flex items-center space-x-4 border rounded-lg px-4 py-5 w-full cursor-pointer transition ${
+                                    className={`flex items-center space-x-4 border rounded-lg px-4 py-3 w-full cursor-pointer transition ${
                                         isSelected ? '' : 'hover:bg-teal-100'
                                     }`}
                                     onClick={() => setSelectedWord(word)}
                                 >
                                     <img
-                                        src={`/img${index + 1}.png`}
+                                        src={`src/Dictionary/img/${index+1}.jpg`}
                                         alt={word}
-                                        className="w-10 h-10 object-cover rounded-full"
+                                        className="w-20 h-12 object-cover"
                                     />
                                     <span className="text-base font-medium">{word}</span>
                                 </li>
@@ -36,30 +38,32 @@ function Dictionary() {
                     </ul>
                 </aside>
 
-                <main className="flex-2">
-                    {/* Category toggle buttons */}
-                    <div className="flex space-x-2 mb-6">
+                <main className="w-4/5 pl-6 border border-gray-300">
+
+                    <div className="flex justify-end space-x-2 mb-6">
                         {['Từ ngữ', 'Chữ cái', 'Chữ số'].map((item, i) => (
                             <button
                                 key={i}
-                                className={`px-4 py-2 rounded-full text-sm font-medium ${
-                                    i === -1 ? 'bg-teal-400 text-white' : 'bg-gray-200'
+                                className={`px-6 py-2 text-lg font-medium border-2 border-transparent hover:bg-teal-300 hover:cursor-pointer ${
+                                    selectedCategory === item ? '!bg-teal-200 text-blue-400 !border-2 !border-black' : 'bg-gray-200'
                                 }`}
+                                onClick={() => {
+                                    setSelectedCategory(item);
+                                    console.log(item);
+                                }}
                             >
                                 {item}
                             </button>
                         ))}
                     </div>
-
-                    {/* Input */}
                     <input
                         type="text"
-                        placeholder="Điền từ cần tìm kiếm..."
-                        className="w-250 grid grid-cols-1 px-4 py-2 mb-6 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
+                        placeholder="Điền từ cần tìm kếm..."
+                        className="w-full px-4 py-2 mb-6 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
                     />
 
                     {/* Video and Explanation */}
-                    <div className="w-250 grid grid-cols-[2fr_1fr] gap-6">
+                    <div className="grid grid-cols-[2.5fr_1fr] gap-6">
                         <div className="border rounded p-4">
                             <h3 className="font-semibold mb-2">Video</h3>
                             <div className="bg-gray-100 h-92 flex items-center justify-center text-gray-400">
@@ -78,6 +82,7 @@ function Dictionary() {
                 </main>
             </div>
         </div>
+        </>
     );
 }
 

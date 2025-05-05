@@ -5,7 +5,7 @@
   pointer-events: none;
 }
 
-.nav {
+.navzz {
   background-color: #ffffff;
   position: fixed;
   top: 0;
@@ -17,7 +17,7 @@
   padding: 0.5em 1em;
 }
 
-.container {
+.containerzz {
   position: absolute;
   inset: 0;
   display: flex;
@@ -26,7 +26,7 @@
   padding: 0.5em 1em;
 }
 
-.nav-btn {
+.navzz-btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.5em 1.5em;
@@ -38,11 +38,11 @@
   transition: border-color 0.25s, background-color 0.25s;
 }
 
-.nav-btn:hover {
+.navzz-btn:hover {
   border-color: #1a73e8;
   background-color: #e0e7ff;
 }
 
-.nav-btn:focus-visible {
+.navzz-btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
