@@ -7,6 +7,15 @@ function Dictionary() {
     const [selectedWord, setSelectedWord] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState("Từ ngữ");
     const trendingWords = ['Xin chào', 'Tạm biệt', 'Việt Nam', 'Giúp tôi', 'Cảm ơn'];
+
+    // State for search input and suggestions
+    const [searchTerm, setSearchTerm] = useState('');
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    // For demonstration, combine trendingWords as suggestions; replace with your full dictionary as needed
+    const suggestions = trendingWords;
+    const filteredSuggestions = suggestions.filter(word =>
+        word.toLowerCase().includes(searchTerm.toLowerCase()) && word !== searchTerm
+    );
     
     // Khi selectedWord thay đổi thì video sẽ tự động thay đổi do src của <video> phụ thuộc vào selectedWord.
     // Tuy nhiên, để đảm bảo video luôn phát lại từ đầu khi selectedWord thay đổi, bạn có thể dùng useRef và useEffect như sau:
@@ -93,13 +102,37 @@ function Dictionary() {
                         ))}
                         </div>
                     </div>
-                    <input
-                        type="text"
-                        placeholder="Điền từ cần tìm kếm..."
-                        className="w-full h-14 px-5 py-2 mb-4 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
-                    />
-
-                    {/* Video and Explanation */}
+                    <div className="relative mb-4">
+                        <input
+                            type="text"
+                            placeholder="Điền từ cần tìm kếm..."
+                            className="w-full h-14 px-5 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
+                            value={searchTerm}
+                            onChange={e => {
+                                setSearchTerm(e.target.value);
+                                setShowSuggestions(true);
+                            }}
+                            onFocus={() => setShowSuggestions(true)}
+                            onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
+                        />
+                        {showSuggestions && searchTerm && filteredSuggestions.length > 0 && (
+                            <ul className="absolute z-10 left-0 right-0 max-w-3xs bg-red-500 border rounded shadow max-h-60 overflow-y-auto">
+                                {filteredSuggestions.map((word, idx) => (
+                                    <li
+                                        key={idx}
+                                        className="px-4 py-2 hover:bg-[#49BBBD]/30 cursor-pointer"
+                                        onMouseDown={() => {
+                                            setSelectedWord(word);
+                                            setSearchTerm(word);
+                                            setShowSuggestions(false);
+                                        }}
+                                    >
+                                        {word}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
                     <div className="grid grid-cols-[2.5fr_1fr] gap-6">
                         <div className="border rounded p-4">
                             <h3 className="font-semibold mb-2">Video</h3>
