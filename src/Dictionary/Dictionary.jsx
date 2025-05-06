@@ -57,26 +57,29 @@ function Dictionary() {
         <div className="flex m-0 p-0 -ml-10">      
             <div className="flex bg-white text-black w-full">
                 {/* Sidebar - Các từ trending */}
-                <aside className="w-1/5 border rounded-lg p-4 py-10 mr-20">
-                    <h2 className="text-xl font-bold mb-6">Các từ trending</h2>
-                    <ul className="space-y-4">
+                <aside className="w-1/5 border rounded-lg mr-20 flex-col overflow-hidden">
+                    <h2 className="text-xl font-bold h-1/6 flex items-center justify-center">Các từ trending</h2>
+                    <ul className="h-5/6 overflow-y-hidden overflow-x-hidden">
                         {trendingWords.map((word, index) => {
                             const isSelected = selectedWord === word;
                             return (
-                                <li
-                                    key={index}
-                                    className={`flex items-center space-x-4 border rounded-lg px-4 py-3 w-full cursor-pointer transition ${
-                                        isSelected ? '' : 'hover:bg-[#49BBBD]/60'
-                                    }`}
-                                    onClick={() => setSelectedWord(word)}
-                                >
-                                    <img
-                                        src={`src/Dictionary/img/${index+1}.jpg`}
-                                        alt={word}
-                                        className="w-20 h-12 object-cover"
-                                    />
-                                    <span className="text-base font-medium break-words max-w-[100px]">{word}</span>
-                                </li>
+                                <React.Fragment key={index}>
+                                    {index === 0 && <hr className="mx-4 border-t" />}
+                                    <li
+                                        className={`flex h-1/5 items-center space-x-4 px-4 hover:bg-[#49BBBD]/60 py-3 w-full cursor-pointer transition ${
+                                            isSelected ? '' : 'hover:bg-[#49BBBD]/60'
+                                        }`}
+                                        onClick={() => setSelectedWord(word)}
+                                    >
+                                        <img
+                                            src={`src/Dictionary/img/${index+1}.jpg`}
+                                            alt={word}
+                                            className="w-20 h-12 object-cover"
+                                        />
+                                        <span className="text-base font-medium break-words max-w-[100px]">{word}</span>
+                                    </li>
+                                    {index < trendingWords.length - 1 && <hr className="mx-4 border-t" />}
+                                </React.Fragment>
                             );
                         })} 
                     </ul>
