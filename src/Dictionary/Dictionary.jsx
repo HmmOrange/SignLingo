@@ -58,7 +58,7 @@ function Dictionary() {
             <div className="flex bg-white text-black w-full">
                 {/* Sidebar - Các từ trending */}
                 <aside className="w-1/5 border rounded-lg mr-20 flex-col overflow-hidden">
-                    <h2 className="text-xl font-bold h-1/6 flex items-center justify-center">Các từ trending</h2>
+                    <h2 className="text-xl font-bold h-1/6 flex items-center justify-center">Gợi ý</h2>
                     <ul className="h-5/6 overflow-y-hidden overflow-x-hidden">
                         {trendingWords.map((word, index) => {
                             const isSelected = selectedWord === word;
@@ -87,7 +87,7 @@ function Dictionary() {
 
                 <main className="w-4/5 border border-gray-300">
 
-                    <div className="flex justify-end space-x-2 mb-3 p-2 rounded-lg">
+                    <div className="flex justify-end space-x-2 mb-3 rounded-lg">
                         <div className="flex items-center space-x-2 bg-[#A1D8D1] p-2 rounded-3xl">
                         {['Từ ngữ', 'Chữ cái', 'Chữ số'].map((item, i) => (
                             <button
@@ -106,6 +106,7 @@ function Dictionary() {
                         </div>
                     </div>
                     <div className="relative mb-4">
+                        {/* TODO: add icon later */}
                         <input
                             type="text"
                             placeholder="Điền từ cần tìm kếm..."

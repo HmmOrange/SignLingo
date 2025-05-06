@@ -8,6 +8,7 @@ import Dictionary from './Dictionary/Dictionary.jsx';
 import App from './App.jsx';
 
 import { AuthProvider } from './contexts/AuthContext';
+import Translator from './Translator/Translator.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dictionary" element={<Dictionary />} />
+          <Route path="/translator" element={<Translator />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
