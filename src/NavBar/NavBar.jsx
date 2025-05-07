@@ -16,6 +16,7 @@ function NavBar() {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Link to="/"><div className="navzz-btn">Home</div></Link>
           <Link to="/dictionary"><div className="navzz-btn  ">Dictionary</div></Link>
+          <Link to="/translator"><div className="navzz-btn  ">Translator</div></Link>
           {/* <Link to="/login"><div className="nav-btn">Login</div></Link> */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {user ? (
