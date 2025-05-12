@@ -1,7 +1,10 @@
 import React from 'react';
 import './Dashboard.css';
 import lessonImg1 from '../assets/environment.png';
-import lessonImg2 from '../assets/dictionary.png'; 
+import lessonImg2 from '../assets/food.png'; 
+
+import featuresImg1 from '../assets/dictionary.png';
+import featuresImg2 from '../assets/translator.png';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -49,7 +52,7 @@ function Dashboard({ username }) {
       </div>
       <div className="features-section">
         <div className="card">
-          <img src={lessonImg1} alt="Từ điển" />
+          <img src={featuresImg1} alt="Từ điển" />
           <div className="card-content">
             <h3>Từ điển</h3>
             <p>Tra cách để biểu diễn ngôn ngữ kí hiệu qua từ điển video</p>
@@ -60,7 +63,7 @@ function Dashboard({ username }) {
           </div>
         </div>
         <div className="card">
-          <img src={lessonImg2} alt="Thông dịch" />
+          <img src={featuresImg2} alt="Thông dịch" />
           <div className="card-content">
             <h3>Thông dịch</h3>
             <p>Dịch các thao tác tay qua video webcam thành câu từ Tiếng Việt</p>
