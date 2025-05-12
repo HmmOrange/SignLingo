@@ -8,6 +8,7 @@ import './App.css'
 import { useAuth } from './contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
+import Dashboard from './Dashboard/Dashboard';
 
 function App() {
 
@@ -22,13 +23,11 @@ function App() {
       <NavBar />
 
       {user ? (
-        <div>
-
-        </div>
+        <Dashboard username={user.name || 'abc'} />
       ) : (
         <div className="fullscreen-image-container">
           <img src={landingImage} alt="Landing" className="fullscreen-image" />
-          <button class="overlay-button" onClick={handleLogin}>Đăng nhập</button>
+          <button className="overlay-button" onClick={handleLogin}>Đăng nhập</button>
         </div>
       )}
     </>

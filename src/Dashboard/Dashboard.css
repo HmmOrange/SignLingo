@@ -1,0 +1,108 @@
+.dashboard-container {
+  padding: 2rem;
+  margin-top: 150px;
+  overflow-y: auto;
+}
+
+.lesson-h2 h2, .features-h2 h2 {
+  padding: 10px;
+  height: 100%;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.lesson-h2 h2 {
+  background: #f0f8ff;
+  
+}
+
+.features-h2 h2 {
+  background: white;
+}
+
+.lesson-section, .features-section {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: justify;
+}
+
+.lesson-section {
+  background-color: #f0f8ff;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 400px;
+}
+
+.card img {
+  width: 100%;
+  height: 150px; /* fixed height for consistency */
+  border-radius: 8px;
+}
+
+.card-content h3 {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.card-content p {
+  margin: 0.5rem 0;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  margin-top: 1rem;
+}
+
+.lesson-info {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 4px;
+  height: 8px;
+  margin-top: 0.5rem;
+}
+
+.progress-bar > div {
+  background: #49BBBD;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.action-button {
+  background-color: #49BBBD;
+  border: none;
+  width: 120px;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+.action-button:hover {
+  background-color: #49BBBD;
+}
