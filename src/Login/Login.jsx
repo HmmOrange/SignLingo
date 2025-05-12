@@ -4,6 +4,8 @@ import NavBar from '../NavBar/NavBar';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
+import './Login.css';
+
 const LoginPage = () => {
 
 	const { login } = useAuth();
@@ -14,16 +16,16 @@ const LoginPage = () => {
 		navigate("/");
   };
 	
-	useEffect(() => {
-		const link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.href = '/css/Login.css'; // Đảm bảo file này được phục vụ đúng từ public/css
-		document.head.appendChild(link);
+	// useEffect(() => {
+	// 	const link = document.createElement('link');
+	// 	link.rel = 'stylesheet';
+	// 	link.href = '/css/Login.css'; // Đảm bảo file này được phục vụ đúng từ public/css
+	// 	document.head.appendChild(link);
 	
-		return () => {
-		  document.head.removeChild(link);
-		};
-	  }, []);
+	// 	return () => {
+	// 	  document.head.removeChild(link);
+	// 	};
+	// }, []);
 
   return (
 		<>

@@ -2,39 +2,35 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import NavBar from './NavBar/NavBar';
 import signLogo from './assets/logo.svg'
+import landingImage from './assets/landing.png'
 import './App.css'
+
+import { useAuth } from './contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const handleLogin = () => {
+		navigate("/login");
+  };
 
   return (
     <>
       <NavBar />
 
-      <div>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-          <img src={signLogo} className="logo" alt="Sign logo" />
-        </a>
-      </div>
-      <h1>SignLingo</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <Link to="/login">
-          <button>Login</button>
-        </Link>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p>
-        i'm gay
-      </p>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {user ? (
+        <div>
+
+        </div>
+      ) : (
+        <div className="fullscreen-image-container">
+          <img src={landingImage} alt="Landing" className="fullscreen-image" />
+          <button class="overlay-button" onClick={handleLogin}>Đăng nhập</button>
+        </div>
+      )}
     </>
   )
 }
