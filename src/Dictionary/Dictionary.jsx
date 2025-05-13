@@ -53,111 +53,111 @@ function Dictionary() {
     return (
         <>
         <NavBar />
-            <div className="flex m-0 p-0 -ml-10">      
-                <div className="flex bg-white text-black w-full">
-                    {/* Sidebar - Các từ trending */}
-                    <aside className="w-1/5 border rounded-lg mr-20 flex-col overflow-hidden">
-                        <h2 className="text-xl font-bold h-1/6 flex items-center justify-center">Gợi ý</h2>
-                        <ul className="h-5/6 overflow-y-hidden overflow-x-hidden">
-                            {trendingWords.map((word, index) => {
-                                const isSelected = selectedWord === word;
-                                return (
-                                    <React.Fragment key={index}>
-                                        {index === 0 && <hr className="mx-4 border-t" />}
-                                        <li
-                                            className={`flex h-1/5 items-center space-x-4 px-4 hover:bg-[#49BBBD]/60 py-3 w-full cursor-pointer transition ${
-                                                isSelected ? '' : 'hover:bg-[#49BBBD]/60'
-                                            }`}
-                                            onClick={() => setSelectedWord(word)}
-                                        >
-                                            <img
-                                                src={`src/Dictionary/img/${index+1}.jpg`}
-                                                alt={word}
-                                                className="w-20 h-12 object-cover"
-                                            />
-                                            <span className="text-base font-medium break-words max-w-[100px]">{word}</span>
-                                        </li>
-                                        {index < trendingWords.length - 1 && <hr className="mx-4 border-t" />}
-                                    </React.Fragment>
-                                );
-                            })} 
-                        </ul>
-                    </aside>
-
-                    <main className="w-4/5 border border-gray-300">
-
-                        <div className="flex justify-end space-x-2 mb-3 rounded-lg">
-                            <div className="flex items-center space-x-2 bg-[#A1D8D1] p-2 rounded-3xl">
-                            {['Từ ngữ', 'Chữ cái', 'Chữ số'].map((item, i) => (
-                                <button
-                                    key={i}
-                                    className={`px-12 py-2 text-lg font-medium border-2 border-transparent rounded-3xl hover:bg-[#49BBBD] hover:cursor-pointer ${
-                                        selectedCategory === item ? '!bg-[#49BBBD] text-white' : 'bg-[#A1D8D1]'
-                                    }`}
-                                    onClick={() => {
-                                        setSelectedCategory(item);
-                                        console.log(item);
-                                    }}
-                                >
-                                    <span className="break-words">{item}</span>
-                                </button>
-                            ))}
-                            </div>
-                        </div>
-                        <div className="relative mb-4">
-                            {/* TODO: add icon later */}
-                            <input
-                                type="text"
-                                placeholder="Điền từ cần tìm kếm..."
-                                className="w-full h-14 px-5 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
-                                value={searchTerm}
-                                onChange={e => {
-                                    setSearchTerm(e.target.value);
-                                    setShowSuggestions(true);
-                                }}
-                                onFocus={() => setShowSuggestions(true)}
-                                onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
-                            />
-                            {showSuggestions && searchTerm && filteredSuggestions.length > 0 && (
-                                <ul className="absolute z-10 left-0 right-0 max-w-3xs bg-red-500 border rounded shadow max-h-60 overflow-y-auto">
-                                    {filteredSuggestions.map((word, idx) => (
-                                        <li
-                                            key={idx}
-                                            className="px-4 py-2 hover:bg-[#49BBBD]/30 cursor-pointer"
-                                            onMouseDown={() => {
-                                                setSelectedWord(word);
-                                                setSearchTerm(word);
-                                                setShowSuggestions(false);
-                                            }}
-                                        >
-                                            {word}
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                        <div className="grid grid-cols-[2.5fr_1fr] gap-6">
-                            <div className="border rounded p-4">
-                                <h3 className="font-semibold mb-2">Video</h3>
-                                <div className="bg-gray-100 h-92 flex items-center justify-center text-gray-400">
-                                    {selectedWord ? (
-                                        <video ref={videoRef} className="w-full h-full" controls>
-                                            <source src={`src/Dictionary/vid/${selectedWord}.mp4`} type="video/mp4"/>
-                                            Your browser does not support HTML video.
-                                        </video>
-                                    ) : 'Chọn một từ để xem video'}
+            <div className="fixed w-full h-full top-0 left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
+                <div className="fixed m-0 p-0 -ml-10 top-[15vh] left-[5vw] w-[95vw]">
+                    <div className="flex text-black w-full">
+                        {/* Sidebar - Các từ trending */}
+                        <aside className="w-1/5 border rounded-lg mr-20 flex-col overflow-hidden">
+                            <h2 className="text-xl font-bold h-1/6 flex items-center justify-center">Gợi ý</h2>
+                            <ul className="h-5/6 overflow-y-hidden overflow-x-hidden">
+                                {trendingWords.map((word, index) => {
+                                    const isSelected = selectedWord === word;
+                                    return (
+                                        <React.Fragment key={index}>
+                                            {index === 0 && <hr className="mx-4 border-t" />}
+                                            <li
+                                                className={`flex h-1/5 items-center space-x-4 px-4 hover:bg-[#49BBBD]/60 py-3 w-full cursor-pointer transition ${
+                                                    isSelected ? '' : 'hover:bg-[#49BBBD]/60'
+                                                }`}
+                                                onClick={() => setSelectedWord(word)}
+                                            >
+                                                <img
+                                                    src={`src/Dictionary/img/${index+1}.jpg`}
+                                                    alt={word}
+                                                    className="w-20 h-12 object-cover"
+                                                />
+                                                <span className="text-base font-medium break-words max-w-[100px]">{word}</span>
+                                            </li>
+                                            {index < trendingWords.length - 1 && <hr className="mx-4 border-t" />}
+                                        </React.Fragment>
+                                    );
+                                })}
+                            </ul>
+                        </aside>
+                        <main className="w-4/5 ">
+                            <div className="flex justify-end space-x-2 mb-3 rounded-lg">
+                                <div className="flex items-center space-x-2 bg-[#A1D8D1] p-2 rounded-3xl">
+                                {['Từ ngữ', 'Chữ cái', 'Chữ số'].map((item, i) => (
+                                    <button
+                                        key={i}
+                                        className={`px-12 py-2 text-lg font-medium border-2 border-transparent rounded-3xl hover:bg-[#49BBBD] hover:cursor-pointer ${
+                                            selectedCategory === item ? '!bg-[#49BBBD] text-white' : 'bg-[#A1D8D1]'
+                                        }`}
+                                        onClick={() => {
+                                            setSelectedCategory(item);
+                                            console.log(item);
+                                        }}
+                                    >
+                                        <span className="break-words">{item}</span>
+                                    </button>
+                                ))}
                                 </div>
                             </div>
-                            <div className="border rounded p-4">
-                                <h3 className="font-semibold mb-2">Giải thích</h3>
-                                <p className="text-gray-600 w-[250px] break-words text-left">
-                                    {selectedWord
-                                        ? description || `Giải thích cho từ "${selectedWord}" sẽ hiển thị ở đây.`
-                                        : 'Chọn một từ để xem giải thích.'}
-                                </p>
+                            <div className="relative mb-4">
+                                {/* TODO: add icon later */}
+                                <input
+                                    type="text"
+                                    placeholder="Điền từ cần tìm kếm..."
+                                    className="w-full h-14 px-5 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
+                                    value={searchTerm}
+                                    onChange={e => {
+                                        setSearchTerm(e.target.value);
+                                        setShowSuggestions(true);
+                                    }}
+                                    onFocus={() => setShowSuggestions(true)}
+                                    onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
+                                />
+                                {showSuggestions && searchTerm && filteredSuggestions.length > 0 && (
+                                    <ul className="absolute z-10 left-0 right-0 max-w-3xs bg-red-500 border rounded shadow max-h-60 overflow-y-auto">
+                                        {filteredSuggestions.map((word, idx) => (
+                                            <li
+                                                key={idx}
+                                                className="px-4 py-2 hover:bg-[#49BBBD]/30 cursor-pointer"
+                                                onMouseDown={() => {
+                                                    setSelectedWord(word);
+                                                    setSearchTerm(word);
+                                                    setShowSuggestions(false);
+                                                }}
+                                            >
+                                                {word}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </div>
-                        </div>
-                    </main>
+                            <div className="grid grid-cols-[2.5fr_1fr] gap-6">
+                                <div className="border rounded p-4">
+                                    <h3 className="font-semibold mb-2">Video</h3>
+                                    <div className="bg-gray-100 h-92 flex items-center justify-center text-gray-400">
+                                        {selectedWord ? (
+                                            <video ref={videoRef} className="w-full h-full" controls>
+                                                <source src={`src/Dictionary/vid/${selectedWord}.mp4`} type="video/mp4"/>
+                                                Your browser does not support HTML video.
+                                            </video>
+                                        ) : 'Chọn một từ để xem video'}
+                                    </div>
+                                </div>
+                                <div className="border rounded p-4">
+                                    <h3 className="font-semibold mb-2">Giải thích</h3>
+                                    <p className="text-gray-600 w-[250px] break-words text-left">
+                                        {selectedWord
+                                            ? description || `Giải thích cho từ "${selectedWord}" sẽ hiển thị ở đây.`
+                                            : 'Chọn một từ để xem giải thích.'}
+                                    </p>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
                 </div>
             </div>
         </>
