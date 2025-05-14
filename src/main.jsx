@@ -26,7 +26,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/study" element={<StudyHome />} />
           <Route path="/study/chữ cái" element={<StudyAlphabet />} />
           <Route path="/study/chữ số" element={<StudyNumber />} />
-          <Route path="/study/t" element={<Study />} />
+          <Route path="/study/quốc gia" element={<Study />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
