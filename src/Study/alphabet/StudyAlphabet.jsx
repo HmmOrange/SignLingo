@@ -1,9 +1,9 @@
-import NavBar from '../NavBar/NavBar';
 import React from 'react';
+import NavBar from '../../NavBar/NavBar';
 
 const lessons = [
     { 
-        title: "Bài 1 : Các loại thời tiết", 
+        title: "Bài 1 : Các", 
         words: [
             "hạn hán",
             "lũ lụt",
@@ -55,9 +55,9 @@ const lessons = [
     },
 ];
 
-const topic = "Môi trườngzzz";
+const topic = "Môi trườngzaaaaaaaaazz";
 
-function Study() {
+function StudyAlphabet() {
 const [openIndex, setOpenIndex] = React.useState(null);
 
 const handleLessonClick = (index) => {
@@ -332,4 +332,4 @@ function Quiz({ lesson }) {
 }
 }
 
-export default Study;
+export default StudyAlphabet;
