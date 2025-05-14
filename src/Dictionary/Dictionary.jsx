@@ -4,14 +4,26 @@ import { useRef, useEffect } from 'react';
 
 function Dictionary() {
     const [selectedWord, setSelectedWord] = useState(null);
-    const [selectedCategory, setSelectedCategory] = useState("Từ ngữ");
     const trendingWords = ['Xin chào', 'Tạm biệt', 'Việt Nam', 'Giúp tôi', 'Cảm ơn'];
 
     // State for search input and suggestions
     const [searchTerm, setSearchTerm] = useState('');
     const [showSuggestions, setShowSuggestions] = useState(false);
     // For demonstration, combine trendingWords as suggestions; replace with your full dictionary as needed
-    const suggestions = trendingWords;
+    const [suggestions, setSuggestions] = useState([]);
+
+    useEffect(() => {
+        fetch('src/Dictionary/words.txt')
+            .then(res => res.ok ? res.text() : Promise.reject('Không tìm thấy danh sách từ'))
+            .then(text => {
+                const words = text.split('\n').map(w => w.trim()).filter(Boolean);
+                setSuggestions(words);
+            })
+            .catch(err => {
+                console.error(err);
+                setSuggestions(trendingWords); // fallback nếu lỗi
+            });
+    }, []);
     const filteredSuggestions = suggestions.filter(word =>
         word.toLowerCase().includes(searchTerm.toLowerCase()) && word !== searchTerm
     );
@@ -54,7 +66,7 @@ function Dictionary() {
         <>
         <NavBar />
             <div className="fixed w-full h-full top-0 left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
-                <div className="fixed m-0 p-0 -ml-10 top-[15vh] left-[5vw] w-[95vw]">
+                <div className="fixed m-0 p-0 -ml-10 top-[20vh] left-[5vw] w-[95vw]">
                     <div className="flex text-black w-full">
                         {/* Sidebar - Các từ trending */}
                         <aside className="w-1/5 border rounded-lg mr-20 flex-col overflow-hidden">
@@ -85,7 +97,7 @@ function Dictionary() {
                             </ul>
                         </aside>
                         <main className="w-4/5 ">
-                            <div className="flex justify-end space-x-2 mb-3 rounded-lg">
+                            {/* <div className="flex justify-end space-x-2 mb-3 rounded-lg">
                                 <div className="flex items-center space-x-2 bg-[#A1D8D1] p-2 rounded-3xl">
                                 {['Từ ngữ', 'Chữ cái', 'Chữ số'].map((item, i) => (
                                     <button
@@ -102,7 +114,7 @@ function Dictionary() {
                                     </button>
                                 ))}
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="relative mb-4">
                                 {/* TODO: add icon later */}
                                 <input
@@ -118,7 +130,7 @@ function Dictionary() {
                                     onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
                                 />
                                 {showSuggestions && searchTerm && filteredSuggestions.length > 0 && (
-                                    <ul className="absolute z-10 left-0 right-0 max-w-3xs bg-red-500 border rounded shadow max-h-60 overflow-y-auto">
+                                    <ul className="absolute z-10 left-0 right-0 max-w-3xs border bg-amber-100 rounded shadow max-h-60 overflow-y-auto">
                                         {filteredSuggestions.map((word, idx) => (
                                             <li
                                                 key={idx}
@@ -149,7 +161,7 @@ function Dictionary() {
                                 </div>
                                 <div className="border rounded p-4">
                                     <h3 className="font-semibold mb-2">Giải thích</h3>
-                                    <p className="text-gray-600 w-[250px] break-words text-left">
+                                    <p className="text-gray-600 w-[250px] break-words indent-8 text-justify">
                                         {selectedWord
                                             ? description || `Giải thích cho từ "${selectedWord}" sẽ hiển thị ở đây.`
                                             : 'Chọn một từ để xem giải thích.'}
