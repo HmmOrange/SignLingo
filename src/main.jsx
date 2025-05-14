@@ -9,6 +9,7 @@ import App from './App.jsx';
 
 import { AuthProvider } from './contexts/AuthContext';
 import Translator from './Translator/Translator.jsx';
+import Study from './Study/Study.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/login" element={<Login />} />
           <Route path="/dictionary" element={<Dictionary />} />
           <Route path="/translator" element={<Translator />} />
+          <Route path="/study" element={<Study />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

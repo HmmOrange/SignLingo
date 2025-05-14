@@ -1,4 +1,3 @@
-// 🧠 Đã cập nhật xử lý MediaPipe vẽ đầy đủ tay, mặt, người
 import NavBar from '../NavBar/NavBar';
 import React from 'react';
 
