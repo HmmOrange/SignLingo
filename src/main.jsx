@@ -12,7 +12,7 @@ import Translator from './Translator/Translator.jsx';
 import Study from './Study/Study.jsx';
 import StudyHome from './Study_home_page/study_home.jsx';
 import StudyAlphabet from './Study/alphabet/StudyAlphabet.jsx';
-import StudyNumber from './Study/number/StudyAlphabet.jsx';
+import StudyNumber from './Study/number/StudyNumber.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -26,6 +26,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/study" element={<StudyHome />} />
           <Route path="/study/chữ cái" element={<StudyAlphabet />} />
           <Route path="/study/chữ số" element={<StudyNumber />} />
+          <Route path="/study/t" element={<Study />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

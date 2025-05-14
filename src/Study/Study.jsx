@@ -196,7 +196,7 @@ return (
                         ) : (
                             <div className="relative w-full h-full aspect-video overflow-hidden">
                                 <video
-                                    src={`src/Study/vid/topic${selectedLessonIndex + 1}/${selectedWord}.mp4`}
+                                    src={`/data/vid/topic${selectedLessonIndex + 1}/${selectedWord}.mp4`}
                                     controls
                                     className="absolute top-0 left-0 w-full h-full"
                                     style={{ objectFit: 'fill' }}
@@ -267,7 +267,7 @@ function Quiz({ lesson }) {
         <div className="flex flex-col items-center justify-center h-full relative">
             <div className="relative w-2/3 aspect-video mb-8">
                 <video
-                    src={`src/Study/vid/topic${lesson.title.match(/\d+/)[0]}/${question.videoWord}.mp4`}
+                    src={`/data/vid/topic${lesson.title.match(/\d+/)[0]}/${question.videoWord}.mp4`}
                     controls
                     className="absolute top-0 left-0 w-full h-full"
                     style={{ objectFit: 'fill' }}
