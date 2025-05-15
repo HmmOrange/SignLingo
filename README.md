@@ -63,7 +63,7 @@ npm run dev
 ![image](https://github.com/user-attachments/assets/d1498d32-8f1f-4fa4-9b4a-a1d388c7840a)
 
 # Đăng nhập
-![image](https://github.com/user-attachments/assets/d1178471-3451-4e77-889e-517c9fdfd614)
+![image](https://github.com/user-attachments/assets/590bfc96-25d5-4fce-9b26-b54c20a22ac0)
 
 # Trang chủ
 ![image](https://github.com/user-attachments/assets/725af08f-ce46-4d5a-8d4d-eed0fe8491bb)
