@@ -1,20 +1,9 @@
 # SignLingo
 SignLingo là ứng dụng hỗ trợ học tập ngôn ngữ kí hiệu Tiếng Việt
+
 ![Group 456](https://github.com/user-attachments/assets/b59a3f30-3697-4780-8494-48678e70d2a1)
 
-# Installing guide
-- Install Node.js
-- Just run this for the first time:
-```
-cd [project]
-npm install
-```
-- To launch the project in dev mode:
-```
-npm run dev
-```
-
-- The website will run at http://localhost:5173
+Demo: https://drive.google.com/drive/folders/1gRYUWO5uh1BCHsnVpCnDSjemQ8WyIkjW
 
 # Nhóm 2
 <center>
@@ -55,6 +44,20 @@ npm run dev
 		</tr>
 	</table>
 </center>
+
+# Installing guide
+- Install Node.js
+- Just run this for the first time:
+```
+cd [project]
+npm install
+```
+- To launch the project in dev mode:
+```
+npm run dev
+```
+
+- The website will run at http://localhost:5173
 
 # Màn hình chính
 ![image](https://github.com/user-attachments/assets/d1498d32-8f1f-4fa4-9b4a-a1d388c7840a)
