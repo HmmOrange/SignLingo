@@ -45,19 +45,6 @@ Demo: https://drive.google.com/drive/folders/1gRYUWO5uh1BCHsnVpCnDSjemQ8WyIkjW
 	</table>
 </center>
 
-# Installing guide
-- Install Node.js
-- Just run this for the first time:
-```
-cd [project]
-npm install
-```
-- To launch the project in dev mode:
-```
-npm run dev
-```
-
-- The website will run at http://localhost:5173
 
 # Màn hình chính
 ![image](https://github.com/user-attachments/assets/d1498d32-8f1f-4fa4-9b4a-a1d388c7840a)
@@ -77,4 +64,16 @@ npm run dev
 # Phiên dịch
 ![Untitled](https://github.com/user-attachments/assets/3bc2e600-e9a6-4092-9cda-f66282360fbe)
 
+# Installing guide
+- Install Node.js
+- Just run this for the first time:
+```
+cd [project]
+npm install
+```
+- To launch the project in dev mode:
+```
+npm run dev
+```
 
+- The website will run at http://localhost:5173
