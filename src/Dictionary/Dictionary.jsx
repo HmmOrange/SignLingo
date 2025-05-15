@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 
 function Dictionary() {
     const [selectedWord, setSelectedWord] = useState(null);
-    const trendingWords = ['Xin chào', 'Tạm biệt', 'Việt Nam', 'Giúp tôi', 'Cảm ơn'];
+    const trendingWords = ['Xin chào', 'Tạm biệt', 'Việt Nam', 'Giúp đỡ', 'Kia'];
 
     // State for search input and suggestions
     const [searchTerm, setSearchTerm] = useState('');
@@ -84,7 +84,7 @@ function Dictionary() {
                                                 onClick={() => setSelectedWord(word)}
                                             >
                                                 <img
-                                                    src={`src/Dictionary/img/${index+1}.jpg`}
+                                                    src={`src/Dictionary/img/${index+1}.png`}
                                                     alt={word}
                                                     className="w-20 h-12 object-cover"
                                                 />
