@@ -174,7 +174,7 @@ return (
                     <div className="h-1/8 items-center flex">
                         {selectedWord === "__quiz__" ? (
                             <h2 className="text-3xl font-semibold pl-10">
-                                Bài tập kiểm tra: Chọn đúng từ cho video dưới đây
+                                Bài tập tự luyện: Chọn đúng từ cho video dưới đây
                             </h2>
                         ) : (
                             <h2 className="text-3xl font-semibold pl-10">
