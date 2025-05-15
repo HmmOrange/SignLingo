@@ -69,7 +69,7 @@ function Dictionary() {
                 <div className="fixed m-0 p-0 -ml-10 top-[20vh] left-[5vw] w-[95vw]">
                     <div className="flex text-black w-full">
                         {/* Sidebar - Các từ trending */}
-                        <aside className="w-1/5 border rounded-lg mr-20 flex-col overflow-hidden">
+                        <aside className="w-1/5 border rounded-lg mr-20 flex-col overflow-hidden bg-amber-50">
                             <h2 className="text-xl font-bold h-1/6 flex items-center justify-center">Gợi ý</h2>
                             <ul className="h-5/6 overflow-y-hidden overflow-x-hidden">
                                 {trendingWords.map((word, index) => {
@@ -115,7 +115,7 @@ function Dictionary() {
                                 ))}
                                 </div>
                             </div> */}
-                            <div className="relative mb-4">
+                            <div className="relative mb-4 bg-amber-50">
                                 {/* TODO: add icon later */}
                                 <input
                                     type="text"
@@ -148,7 +148,7 @@ function Dictionary() {
                                 )}
                             </div>
                             <div className="grid grid-cols-[2.5fr_1fr] gap-6">
-                                <div className="border rounded p-4">
+                                <div className="border rounded p-4 bg-amber-50">
                                     <h3 className="font-semibold mb-2">Video</h3>
                                     <div className="bg-gray-100 h-92 flex items-center justify-center text-gray-400">
                                         {selectedWord ? (
@@ -159,7 +159,7 @@ function Dictionary() {
                                         ) : 'Chọn một từ để xem video'}
                                     </div>
                                 </div>
-                                <div className="border rounded p-4">
+                                <div className="border rounded p-4 bg-amber-50">
                                     <h3 className="font-semibold mb-2">Giải thích</h3>
                                     <p className="text-gray-600 w-[250px] break-words indent-8 text-justify">
                                         {selectedWord

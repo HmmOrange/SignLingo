@@ -7,6 +7,7 @@ function Translator() {
     const [translating, setTranslating] = React.useState(false); // 'idle' | 'translating' | 'done'
     const [uploadedVideo, setUploadedVideo] = React.useState(null);
     const [isReversed, setIsReversed] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(false);
 
     const videoRef = React.useRef(null);
     const canvasRef = React.useRef(null);
@@ -155,7 +156,10 @@ function Translator() {
                         <div className="pl-[5vw] flex items-center w-1/2">
                             <button
                                 className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-600 transition ${selected === 0 ? 'bg-blue-500' : ''}`}
-                                onClick={() => { setSelected(0); setIsReversed(false); }}
+                                onClick={() => { setSelected(0); setIsReversed(false); 
+                                                            setTranslating(false);
+                                                            setUploadedVideo(null);
+                                }}
                             >
                                 Dịch thủ ngữ
                             </button>
@@ -163,7 +167,9 @@ function Translator() {
                         <div className="pl-[5vw] flex items-center w-1/2">
                             <button
                                 className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-600 transition ${selected === 1 ? 'bg-blue-500' : ''}`}
-                                onClick={() => { setSelected(1); setIsReversed(true); }}
+                                onClick={() => { setSelected(1); setIsReversed(true); setTranslating(false);
+                                                            setUploadedVideo(null);
+                                                        }}
                             >
                                 Dịch tiếng Việt
                             </button>
@@ -175,17 +181,23 @@ function Translator() {
                         <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-10 p-5 relative">
                             {isReversed ? (
                                 <>
-                                    <div className="relative h-full p-4 flex flex-col justify-between border rounded-lg">
+                                    <div className="relative h-full p-4 flex flex-col justify-between border rounded-lg bg-amber-50">
                                         <textarea
                                             className="text-2xl w-full h-3/4 mt-2 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                                             placeholder="Nhập văn bản để dịch..."
                                         ></textarea>
-                                        <div className="flex h-1/4 justify-end items-center gap-3 mt-2">
+                                        <div className="flex h-1/4 justify-end items-center gap-3 mt-2 ">
                                             <button
                                                 className="px-4 w-1/4 h-3/5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 text-2xl"
                                                 onClick={() => {
-                                                    setTranslating(true);
-                                                    setUploadedVideo('src/Dictionary/vid/Xin chào.mp4');
+                                                    setTranslating(false);
+                                                    setUploadedVideo(null);
+                                                    setIsLoading(true);
+                                                    setTimeout(() => {
+                                                        setIsLoading(false);
+                                                        setTranslating(true);
+                                                        setUploadedVideo('data/vid/hello.mp4');
+                                                    }, 3000);
                                                     // TODO: change video url to skeleton
                                                 }}
                                             >
@@ -193,7 +205,7 @@ function Translator() {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="text-xl font-semibold border rounded-lg relative">
+                                    <div className="text-xl font-semibold border rounded-lg relative bg-amber-50">
                                         <div className="h-5/6 flex items-center justify-center">
                                             {translating ? (
                                                 <div className="relative w-full h-full bg-black flex justify-center items-center">
@@ -202,25 +214,36 @@ function Translator() {
                                                         autoPlay
                                                         muted
                                                         playsInline
-                                                        onEnded={() => {
-                                                            setTranslating(false);
-                                                            setUploadedVideo(null);
-                                                        }}
+                                                        // onEnded={() => {
+                                                        //     setTranslating(false);
+                                                        //     setUploadedVideo(null);
+                                                        // }}
+                                                        loop
                                                         className="absolute top-0 left-0 w-full h-full"
                                                         style={{ objectFit: 'fill' }}
                                                     />
                                                 </div>
                                             ) : (
-                                                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                                                    Ấn dịch để hiển thị kết quả
-                                                </div>
+                                                isLoading ? (
+                                                    <div className="w-full h-full flex flex-col items-center justify-center text-gray-400 text-2xl">
+                                                        <svg className="animate-spin h-10 w-10 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                                                        </svg>
+                                                        Đang dịch...
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-full h-full flex items-center justify-center text-gray-400" name="placeholder">
+                                                        Ấn dịch để hiển thị kết quả
+                                                    </div>
+                                                )
                                             )}
                                         </div>
                                     </div>
                                 </>
                             ) : (
                                 <>
-                                    <div className="text-xl font-semibold border rounded-lg relative">
+                                    <div className="text-xl font-semibold border rounded-lg relative bg-amber-50">
                                         <div className="h-4/5 flex items-center justify-center">
                                             {inputType === 'webcam' ? (
                                                 <div className="relative w-full h-full">
@@ -284,6 +307,7 @@ function Translator() {
                                                         setInputType('webcam');
                                                         setUploadedVideo(null);
                                                         setShowTranslation(false);
+                                                        setTimeout(() => setShowTranslation(true), 7000);
                                                     }}
                                                     className={`rounded-full border hover:cursor-pointer p-3 bg-white ${inputType === 'webcam' ? 'ring-2 ring-blue-400' : ''}`}
                                                 >📷</button>
@@ -308,7 +332,7 @@ function Translator() {
                                                                 setTimeout(() => setShowTranslation(true), 2000);
                                                             }}
                                                         >
-                                                            dịch
+                                                            Dịch
                                                         </button>
                                                     </>
                                                 )}
