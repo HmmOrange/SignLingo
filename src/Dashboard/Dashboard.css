@@ -1,6 +1,6 @@
 .dashboard-container {
   padding: 2rem;
-  margin-top: 300px;
+  margin-top: 8vh;
   overflow-y: auto;
 }
 
@@ -17,9 +17,6 @@
   
 }
 
-.features-h2 h2 {
-  background: white;
-}
 
 .lesson-section, .features-section {
   display: flex;
