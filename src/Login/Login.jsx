@@ -38,11 +38,11 @@ return (
 					<img
 						src={signImage}
 						alt="Sign Language Image"
-						style={{ width: '60vw', height: '60vh', objectFit: 'contain' }}
+						style={{ width: '50vw', height: '80vh', }}
 						className="sign-image"
 					/>
 				</div>
-				<div className="login-right">
+				<div className="ml-[10vw] login-right">
 					<div className="login-tabs">
 						<button className="active">Đăng nhập</button>
 						<button className="inactive">Đăng ký</button>
@@ -59,8 +59,21 @@ return (
 							<label><input type="checkbox" /> Ghi nhớ tôi</label>
 							<a href="#">Quên mật khẩu?</a>
 						</div>
-						<div className='login-confirm'>
-							<button onClick={handleLogin}>Đăng nhập</button>
+						<div className='flex flex-col gap-2'>
+							<button className='bg-[#49BBBD] w-full' onClick={handleLogin}>Đăng nhập</button>
+							<hr style={{ border: 'none', borderTop: '3px solid #ccc', margin: '8px 0' }} />
+							<button
+								className="bg-white border border-gray-300 rounded flex items-center justify-center gap-2 px-6 py-2 shadow hover:bg-gray-100 transition"
+								style={{ fontWeight: 500, fontSize: '1rem' }}
+								onClick={handleLogin}
+							>
+								<img
+									src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+									alt="Google logo"
+									style={{ width: 24, height: 24 }}
+								/>
+								<span>Đăng nhập với Google</span>
+							</button>
 						</div>
 					</div>
 				</div>

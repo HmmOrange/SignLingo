@@ -104,10 +104,10 @@ html, body {
   color: gray;
 }
 
-.login-confirm {
+/* .login-confirm {
   display: flex;
   justify-content: flex-end;
-}
+} */
 
 
 :root {
@@ -160,7 +160,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
   cursor: pointer;
   transition: border-color 0.25s, background-color 0.25s;
 }
