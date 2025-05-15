@@ -130,11 +130,11 @@ function Dictionary() {
                                     onBlur={() => setTimeout(() => setShowSuggestions(false), 100)}
                                 />
                                 {showSuggestions && searchTerm && filteredSuggestions.length > 0 && (
-                                    <ul className="absolute z-10 left-0 right-0 max-w-3xs border bg-amber-100 rounded shadow max-h-60 overflow-y-auto">
+                                    <ul className="absolute z-10 left-0 right-0 max-w-full border rounded-lg bg-amber-50 shadow max-h-60 overflow-y-auto scrollbar-hidezzz">
                                         {filteredSuggestions.map((word, idx) => (
                                             <li
                                                 key={idx}
-                                                className="px-4 py-2 hover:bg-[#49BBBD]/30 cursor-pointer"
+                                                className="px-4 py-2 hover:bg-[#49BBBD]/30 cursor-pointer border-1 h-[6vh]"
                                                 onMouseDown={() => {
                                                     setSelectedWord(word);
                                                     setSearchTerm(word);

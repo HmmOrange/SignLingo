@@ -155,7 +155,7 @@ function Translator() {
                     <div className="flex h-1/5 w-full">
                         <div className="pl-[5vw] flex items-center w-1/2">
                             <button
-                                className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-600 transition ${selected === 0 ? 'bg-blue-500' : ''}`}
+                                className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-200 cursor-pointer transition ${selected === 0 ? 'bg-[#49BBBD]' : ''}`}
                                 onClick={() => { setSelected(0); setIsReversed(false); 
                                                             setTranslating(false);
                                                             setUploadedVideo(null);
@@ -166,7 +166,7 @@ function Translator() {
                         </div>
                         <div className="pl-[5vw] flex items-center w-1/2">
                             <button
-                                className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-600 transition ${selected === 1 ? 'bg-blue-500' : ''}`}
+                                className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-200 cursor-pointer transition ${selected === 1 ? 'bg-[#49BBBD]' : ''}`}
                                 onClick={() => { setSelected(1); setIsReversed(true); setTranslating(false);
                                                             setUploadedVideo(null);
                                                         }}
@@ -316,7 +316,7 @@ function Translator() {
                                                 {inputType === 'file' && uploadedVideo && (
                                                     <>
                                                         <button
-                                                            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 hover:cursor-pointer"
+                                                            className="px-4 py-2 bg-[#49BBBD] rounded hover:bg-blue-200 hover:cursor-pointer"
                                                             onClick={() => {
                                                                 handleRemoveVideo();
                                                                 setShowTranslation(false);
@@ -326,7 +326,7 @@ function Translator() {
                                                         </button>
 
                                                         <button
-                                                            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 ml-3 hover:cursor-pointer"
+                                                            className="px-4 py-2 bg-[#49BBBD]  rounded hover:bg-blue-200 ml-3 hover:cursor-pointer"
                                                             onClick={() => {
                                                                 setShowTranslation("loading");
                                                                 setTimeout(() => setShowTranslation(true), 2000);

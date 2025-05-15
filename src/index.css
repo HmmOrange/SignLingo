@@ -41,6 +41,15 @@ h1 {
   line-height: 1.1;
 }
 
+.scrollbar-hidezzz {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.scrollbar-hidezzz::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
 /* button {
   border-radius: 10px;
   border: 1px solid transparent;
