@@ -3,7 +3,7 @@ SignLingo là ứng dụng hỗ trợ học tập ngôn ngữ kí hiệu Tiếng
 
 ![Group 456](https://github.com/user-attachments/assets/b59a3f30-3697-4780-8494-48678e70d2a1)
 
-Demo: https://drive.google.com/drive/folders/1gRYUWO5uh1BCHsnVpCnDSjemQ8WyIkjW
+Demo & Báo cáo: https://drive.google.com/drive/folders/1gRYUWO5uh1BCHsnVpCnDSjemQ8WyIkjW
 
 # Nhóm 2
 <center>
