@@ -261,11 +261,22 @@ function Quiz({ lesson }) {
     return (
         <div className="flex flex-col items-center justify-center h-full relative">
             <div className="relative w-2/3 aspect-video mb-8">
+                {/* Overlay che góc trên bên phải */}
+                <div
+                    className="absolute top-0 right-0"
+                    style={{
+                        width: '30%',
+                        height: '30%',
+                        background: "#176988",
+                        zIndex: 2,
+                        pointerEvents: 'none',
+                    }}
+                />
                 <video
                     src={`/data/vid/topic${lesson.title.match(/\d+/)[0]}/${question.videoWord}.mp4`}
                     controls
                     className="absolute top-0 left-0 w-full h-full"
-                    style={{ objectFit: 'fill' }}
+                    style={{ objectFit: 'fill', zIndex: 1 }}
                 />
             </div>
             <div className="w-2/3 grid grid-cols-2 gap-6">
