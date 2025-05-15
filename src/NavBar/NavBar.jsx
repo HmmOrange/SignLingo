@@ -3,6 +3,7 @@ import signLogo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import '../index.css'; 
 import './NavBar.css';
+import avatarImg from '../assets/avatar.png';
 
 function NavBar() {
   const { user } = useAuth();
@@ -23,7 +24,7 @@ function NavBar() {
             {user ? (
               <div className="navzz-profile" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <img
-                  src={user.avatar}
+                  src={avatarImg}
                   alt="Profile"
                   style={{ width: '32px', height: '32px', borderRadius: '50%' }}
                 />

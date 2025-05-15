@@ -26,7 +26,7 @@ function App() {
         <Dashboard username={user.name || 'abc'} />
       ) : (
         <div className="fullscreen-image-container">
-          <img src={landingImage} alt="Landing" className="fullscreen-image" />
+          <img src={landingImage} alt="Landing" className="fullscreen-image"  />
           <button className="overlay-button" onClick={handleLogin}>Đăng nhập</button>
         </div>
       )}
