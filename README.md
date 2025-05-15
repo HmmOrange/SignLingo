@@ -72,7 +72,7 @@ npm run dev
 ![image](https://github.com/user-attachments/assets/f9c91660-a119-424d-b855-55b56b43143e)
 
 # Từ điển
-![image](https://github.com/user-attachments/assets/7fbe6187-85a9-45be-9f02-fada351bc274)
+![image](https://github.com/user-attachments/assets/7e608173-099d-41c5-8cf7-0e05828cd0a5)
 
 # Phiên dịch
 ![Untitled](https://github.com/user-attachments/assets/3bc2e600-e9a6-4092-9cda-f66282360fbe)
