@@ -45,7 +45,7 @@ const StudyHome = () => {
     };
 
     return (
-        <div className="absolute top-[12vh] left-0 w-full h-[220vh] overflow-x-hidden overflow-y-hidden">
+        <div className="absolute top-[8vh] left-0 w-full h-[220vh] overflow-x-hidden overflow-y-hidden">
             <NavBar />
 
             <div className="flex-col h-[200vh] w-full ">

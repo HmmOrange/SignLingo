@@ -21,6 +21,10 @@ function Dashboard({ username }) {
 		navigate("/dictionary");
   };
 
+  const handleTrans = () => {
+		navigate("/translator");
+  };
+
 
   return (
     <div className="dashboard-container fixed w-full h-full top-0 left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
@@ -89,7 +93,7 @@ function Dashboard({ username }) {
             <p>Dịch các thao tác tay qua video webcam thành câu từ Tiếng Việt</p>
             <div className='button-row'>
               <div></div>
-              <button className="action-button">Dịch Video</button>
+              <button className="action-button" onClick={handleTrans}>Dịch Video</button>
             </div>
           </div>
         </div>

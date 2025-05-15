@@ -3,59 +3,54 @@ import React from 'react';
 
 const lessons = [
     { 
-        title: "Bài 1 : Các loại thời tiết", 
+        title: "Bài 1 : Châu Á", 
         words: [
-            "hạn hán",
-            "lũ lụt",
-            "núi",
-            "sông",
-            "mưa",
-            "gió",
-            "bão",
-            "động đất",
-            "nắng",
-            "tuyết"
+            "Việt Nam",
+            "Ả rập",
+            "Băng-la-đét",
+            "Brunei",
+            "Cam-pu-chia",
+            "Đông Timor",
+            "Lào",
+            "Mã Lai",
+            "Miến Điện",
+            "Trung Quốc",
         ],
         progress: { cur: 7, limit: 10 }, 
         active: true 
     },
     { 
-        title: "Bài 2 : Các loại thiên tai", 
+        title: "Bài 2 : Châu Âu", 
         words: [
-            "hán",
-            "lũ",
-            "núi",
-            "s222222222222ông",
-            "mưa",
-            "gió",
-            "bão",
-            "động đất",
-            "nắng",
-            "tuyết"
+            "Albania",
+            "Anh",
+            "Bun-ga-ri",
+            "Cộng Hòa Séc",
+            "Hà Lan",
+            "Hung-ga-ri",
+            "Italia",
+            "Liên Bang Nga",
         ],
-        progress: { cur: 1, limit: 10 }, 
+        progress: { cur: 3, limit: 8 }, 
         active: false 
     },
     { 
-        title: "Bài 3 : Các loại địa hình", 
+        title: "Bài 3 : Châu Mỹ", 
         words: [
-            "hạn hán",
-            "lũ lụt",
-            "núi",
-            "sông33333333333333",
-            "mưa",
-            "gió",
-            "bão",
-            "động",
-            "nắng",
-            "tuyết"
+            "Braxin",
+            "Chi-lê",
+            "Colombia",
+            "Cu ba",
+            "Mexico",
+            "Mỹ",
+            "Pê-ru",
         ],
-        progress: { cur: 1, limit: 10 }, 
+        progress: { cur: 1, limit: 7 }, 
         active: false 
     },
 ];
 
-const topic = "Môi trườngzzz";
+const topic = "Quốc gia";
 
 function Study() {
 const [openIndex, setOpenIndex] = React.useState(null);
@@ -94,7 +89,7 @@ const handleNext = () => {
 return (
     <div>
         <NavBar />
-        <div className="h-[90vh] w-[100vw] flex fixed top-[10vh] left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
+        <div className="h-[90vh] w-[100vw] flex fixed top-[8vh] left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
             <div
                 className="w-1/3 h-[90vh] shadow-md p-4 mr-[2vw] border-2 overflow-y-auto"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
