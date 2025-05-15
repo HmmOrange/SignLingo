@@ -6,6 +6,7 @@ import lessonImg2 from '../assets/food.png';
 import featuresImg1 from '../assets/dictionary.png';
 import featuresImg2 from '../assets/translator.png';
 import featuresImg3 from '../assets/quốc gia.png'
+import featuresImg4 from './1.png';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -94,6 +95,17 @@ function Dashboard({ username }) {
             <div className='button-row'>
               <div></div>
               <button className="action-button" onClick={handleTrans}>Dịch Video</button>
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <img src={featuresImg4} alt="Hướng dẫn sử dụng" />
+          <div className="card-content">
+            <h3>Hướng dẫn sử dụng</h3>
+            <p>Hướng dẫn chi tiết cách sử dụng các chức năng của SignLingo</p>
+            <div className='button-row'>
+              <div></div>
+              <button className="action-button" onClick={handleTrans}>Xem thêm</button>
             </div>
           </div>
         </div>

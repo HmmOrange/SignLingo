@@ -15,10 +15,10 @@ function NavBar() {
           <img src={signLogo} alt="Logo" style={{ height: '40px' }} />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Link to="/"><div className="navzz-btn">Home</div></Link>
-          <Link to="/study"><div className="navzz-btn  ">Study</div></Link>
-          <Link to="/dictionary"><div className="navzz-btn  ">Dictionary</div></Link>
-          <Link to="/translator"><div className="navzz-btn  ">Translator</div></Link>
+          <Link to="/"><div className="navzz-btn">Trang chủ</div></Link>
+          <Link to="/study"><div className="navzz-btn  ">Học tập</div></Link>
+          <Link to="/dictionary"><div className="navzz-btn  ">Từ điển</div></Link>
+          <Link to="/translator"><div className="navzz-btn  ">Phiên dịch</div></Link>
           {/* <Link to="/login"><div className="nav-btn">Login</div></Link> */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {user ? (
@@ -31,7 +31,7 @@ function NavBar() {
                 <span style={{width: '80px', alignItems: 'center', fontWeight: '500'}}>{user.name}</span>
               </div>
             ) : (
-              <Link to="/login"><div className="navzz-btn">Login</div></Link>
+              <Link to="/login"><div className="navzz-btn">Đăng nhập</div></Link>
             )}
           </div>
         </div>
