@@ -149,29 +149,32 @@ function Translator() {
     return (
         <div className="fixed w-full h-full top-0 left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
             <div className="bg-transparent w-[90vw] h-[80vh] ml-[-4vw] top-[12vh] fixed left-[9vw]">
+                <div className='fixed top-[10.5vh] text-4xl font-bold '>
+                    Dịch thủ ngữ
+                </div>
                 <NavBar />
-                <div className="flex w-[90vw] h-[80vh] flex-col items-center">
+                <div className="mt-[3vh] flex w-[90vw] h-[80vh] flex-col items-center">
                     {/* Thanh chọn chế độ */}
                     <div className="flex h-1/5 w-full">
-                        <div className="pl-[5vw] flex items-center w-1/2">
+                        <div className="px-[4vw] flex items-center w-1/2">
                             <button
-                                className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-200 cursor-pointer transition ${selected === 0 ? 'bg-[#49BBBD]' : ''}`}
+                                className={`w-full text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-200 cursor-pointer transition ${selected === 0 ? 'bg-[#49BBBD]' : 'bg-[#D4E9FF]'}`}
                                 onClick={() => { setSelected(0); setIsReversed(false); 
                                                             setTranslating(false);
                                                             setUploadedVideo(null);
                                 }}
                             >
-                                Dịch thủ ngữ
+                                Dịch thủ ngữ &rarr; Tiếng Việt
                             </button>
                         </div>
-                        <div className="pl-[5vw] flex items-center w-1/2">
+                        <div className="ml-[-2vw] px-[4vw] flex items-center w-1/2">
                             <button
-                                className={`text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-200 cursor-pointer transition ${selected === 1 ? 'bg-[#49BBBD]' : ''}`}
+                                className={`w-full text-lg px-6 py-4 shadow-md rounded-lg border-2 border-gray-400 hover:bg-blue-200 cursor-pointer transition ${selected === 1 ? 'bg-[#49BBBD]' : 'bg-[#D4E9FF]'}`}
                                 onClick={() => { setSelected(1); setIsReversed(true); setTranslating(false);
                                                             setUploadedVideo(null);
                                                         }}
                             >
-                                Dịch tiếng Việt
+                                Dịch tiếng Việt &rarr; Thủ ngữ
                             </button>
                         </div>
                     </div>

@@ -89,9 +89,9 @@ const handleNext = () => {
 return (
     <div>
         <NavBar />
-        <div className="h-[90vh] w-[100vw] flex fixed top-[8vh] left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
+        <div className="h-[90vh] w-[100vw] flex fixed top-[8vh] left-0 bg-white">
             <div
-                className="w-1/3 h-[90vh] shadow-md p-4 mr-[2vw] border-2 overflow-y-auto"
+                className="w-1/3 h-[95vh] shadow-md p-4 mr-[2vw] bg-[#ebf5ff] overflow-y-auto"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 <style>
@@ -177,7 +177,7 @@ return (
                                 Bài tập tự luyện: Chọn đúng từ cho video dưới đây
                             </h2>
                         ) : (
-                            <h2 className="text-3xl font-semibold pl-10">
+                            <h2 className="text-3xl font-semibold">
                                 Từ mới: <span className="text-teal-600">{selectedWord}</span>
                             </h2>
                         )}
@@ -201,16 +201,16 @@ return (
                     </div>
                     {selectedWord !== "__quiz__" && (
                         <div className="h-1/8">
-                            <div className="flex justify-between h-full items-center px-[1vw]">
+                            <div className="flex justify-between h-full items-center ">
                                 <button
-                                    className="hover:cursor-pointer h-3/4 w-1/6 px-4 py-2 text-xl bg-gray-200 rounded-lg hover:bg-gray-300"
+                                    className="font-bold hover:cursor-pointer h-3/4 w-1/6 px-4 py-2 text-xl bg-[#e2f0ff] rounded-lg hover:bg-gray-300"
                                     onClick={handlePrev}
                                     disabled={lessons[selectedLessonIndex].words.indexOf(selectedWord) === 0}
                                 >
                                     Quay lại
                                 </button>
                                 <button
-                                    className="hover:cursor-pointer h-3/4 w-1/6 text-xl px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600"
+                                    className="hover:cursor-pointer h-3/4 w-1/6 text-xl px-4 py-2 bg-[#49BBBD] text-white rounded-lg hover:bg-teal-600"
                                     onClick={handleNext}
                                     disabled={lessons[selectedLessonIndex].words.indexOf(selectedWord) === lessons[selectedLessonIndex].words.length - 1}
                                 >
@@ -275,6 +275,7 @@ function Quiz({ lesson }) {
                 <video
                     src={`/data/vid/topic${lesson.title.match(/\d+/)[0]}/${question.videoWord}.mp4`}
                     controls
+                    autoPlay
                     className="absolute top-0 left-0 w-full h-full"
                     style={{ objectFit: 'fill', zIndex: 1 }}
                 />
@@ -283,7 +284,7 @@ function Quiz({ lesson }) {
                 {question.options.map((opt, idx) => (
                     <button
                         key={opt}
-                        className={`text-xl px-6 py-4 rounded-lg border-2 ${
+                        className={`text-xl px-6 py-4 rounded-lg border-2 cursor-pointer ${
                             selected === idx
                                 ? opt === question.answer
                                     ? "bg-green-300 border-green-600"

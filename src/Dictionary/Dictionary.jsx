@@ -66,6 +66,9 @@ function Dictionary() {
         <>
         <NavBar />
             <div className="fixed w-full h-full top-0 left-0 bg-gradient-to-b from-blue-100 via-amber-100 to-blue-200">
+                <div className='fixed top-[10.5vh] left-[5vw] text-4xl font-bold '>
+                    Từ điển thủ ngữ
+                </div>
                 <div className="fixed m-0 p-0 -ml-10 top-[20vh] left-[5vw] w-[95vw]">
                     <div className="flex text-black w-full">
                         {/* Sidebar - Các từ trending */}
@@ -117,10 +120,15 @@ function Dictionary() {
                             </div> */}
                             <div className="relative mb-4 bg-amber-50">
                                 {/* TODO: add icon later */}
+                                <span className="absolute left-3 top-4 text-gray-400 pointer-events-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+                                        </svg>
+                                </span>
                                 <input
                                     type="text"
                                     placeholder="Điền từ cần tìm kếm..."
-                                    className="w-full h-14 px-5 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
+                                    className="w-full h-14 pl-[3vw] px-5 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-teal-400"
                                     value={searchTerm}
                                     onChange={e => {
                                         setSearchTerm(e.target.value);
